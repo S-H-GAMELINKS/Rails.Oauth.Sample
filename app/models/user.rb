@@ -13,9 +13,9 @@ class User < ApplicationRecord
         email:    User.dummy_email(auth),
         password: Devise.friendly_token[0, 20]
       )
+      user.save!
     end
-
-    user
+    current_user = user
   end
 
   private
